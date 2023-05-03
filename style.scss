@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+
+$MainColor: #f15048;
+$WhiteColor: #ffffff;
+$BlackColor: #000000;
+
+@mixin button($p1, $p2, $br, $fw, $fs){
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $WhiteColor;
+    border: 1px solid $MainColor;  
+    padding: $p1 $p2;
+    border-radius: $br;
+    background-color: $MainColor;
+    font-weight: $fw;
+    font-size: $fs;
+}
+
+@mixin font($fs, $fw){
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+@mixin img($w, $h){
+    width: $w;
+    height: $h;
+}
+
+%bgi{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+%section{
+    max-width: 1160px;
+    margin: auto;
+}
+
+
+body{
+    background-color: #fff;
+    color: $BlackColor;
+    margin: 0;
+}
+
+
+.first-page{
+    background-image: url(.img/background.png);
+    @extend %bgi;
+}
+
+
+.first-page__section{
+    padding: 50px 100px 130px 100px;
+    @extend %section;
+}
+
+.main-text{
+    padding-top: 150px;
+    width: 538px;
+    color: $WhiteColor;
+    text-align: right;
+    line-height: 20px;
+    margin: 0px 0 0px auto;
+}
+
+h1{
+    font-family: 'Roboto Slab', serif;
+    position: relative;
+}
+
+h6{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Roboto', sans-serif;
+    @include font(15px, 400)
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    @include font(0.875rem, 400);
+}
+
+a{
+    @include button(12px, 30px, 24px, 700, 0.875rem);
+}
+
+.second-page__section{
+    display: flex;
+    gap: 100px;
+    margin: 30px auto;
+}
+
+.earphones{
+    margin-top: -120px;
+    @include img(752px, 732px);
+}
+
+.logo{
+    @include img(200px, 100px);
+}
+
+.other-text{
+    padding-left: 20px;
+}
+
+.second-page{
+    @extend %section
+}
+
+.colorRed{
+    color: $MainColor;
+}
+
+.size65{
+    @include font(65px, 700)
+}
+
+.size90{
+    @include font(90px, 700)
+}
+
+.size60{
+    @include font(60px, 700)
+}
